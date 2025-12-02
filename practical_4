@@ -1,1 +1,71 @@
+#Вариант 1
+#Задание №1
+num = int(input("Введите целое число: "))
+if num < 0:
+  result = abs(num)
+elif num == 0:
+  result = 1
+else:
+  result = num
+print(result)
 
+#Задание 2
+
+string = input("Введите строку: ")
+if "." in string or "," in string:
+    print(True)
+else:
+    print(False)
+#Задание 3
+num1 = int(input("Введите первое число: "))
+num2 = int(input("Введите второе число: "))
+div1_by_3 = (num1 % 3 == 0)
+div2_by_3 = (num2 % 3 == 0)
+if div1_by_3 and div2_by_3:
+    print(True)
+elif div1_by_3 or div2_by_3:
+    print("Одно число делится на 3")
+else:
+    print(False)
+
+#Вариант 2
+#Задание №1
+number = int(input("Введите число: "))  
+if number > 100:  
+    print("*")  
+elif number > 0:  
+    print("*" * number)
+
+#Задание №2
+str1 = input("Введите первую строку: ")  
+str2 = input("Введите вторую строку: ")  
+if str1 == str2:
+    print(True)
+else:
+    print(False)
+
+#Задание №3
+r = int(input("Введите значение r (0-255): "))  
+g = int(input("Введите значение g (0-255): "))  
+b = int(input("Введите значение b (0-255): "))
+if r == g == b == 0:
+    print("Чёрный цвет")
+elif r == g == b == 255:
+    print("Белый цвет")
+elif r == 255 and g == b == 0:
+    print("Красный цвет")
+elif g == 255 and r == b == 0:
+    print("Зелёный цвет")
+elif b == 255 and g == r == 0:
+    print("Синий цвет")
+else:
+    print("Нет цвета")
+
+#Вариант №3
+#Задание №1
+num = int(input("Введите число: "))
+if num > 0:
+    print(f"Результат: {num - 1}, {num}, {num + 1}")
+else:
+    num = 1
+    print(f"Результат: {num - 1}, {num}, {num + 1}")
