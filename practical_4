@@ -69,3 +69,383 @@ if num > 0:
 else:
     num = 1
     print(f"Результат: {num - 1}, {num}, {num + 1}")
+#Вариант 4
+#1
+text = 'important information in one line'
+letter = input("Введите букву: ").strip().lower()  
+if len(letter) == 1:  
+    result = letter in text  
+    print(result)  
+else:  
+    print("Пожалуйста, введите ровно одну букву") 
+#2
+def calculate_figure():
+    print("=== Определитель фигуры и площади ===")
+    
+    try:
+        side1 = float(input("Введите длину первой стороны: "))
+        side2 = float(input("Введите длину второй стороны: "))
+        if side1 <= 0 or side2 <= 0:
+            print("❌ Ошибка: стороны должны быть положительными числами!")
+            return
+        if side1 == side2:
+            figure_type = "КВАДРАТ"
+        else:
+            figure_type = "ПРЯМОУГОЛЬНИК"
+        area = side1 * side2
+        print(f"\n📐 Фигура: {figure_type}")
+        print(f"📏 Сторона A: {side1}")
+        print(f"📏 Сторона B: {side2}")
+        print(f"📊 Площадь: {area}")
+        
+    except ValueError:
+        print("❌ Ошибка: пожалуйста, введите числовые значения!")
+def detailed_figure_calculation():
+    print("=== Определитель фигуры и площади ===")
+    
+    try:
+        a = float(input("Введите длину первой стороны: "))
+        b = float(input("Введите длину второй стороны: "))
+        
+        if a <= 0 or b <= 0:
+            print("❌ Ошибка: стороны должны быть положительными числами!")
+            return
+        if a == b:
+            figure_type = "КВАДРАТ"
+            description = f"Все стороны равны ({a})"
+        else:
+            figure_type = "ПРЯМОУГОЛЬНИК"
+            description = f"Смежные стороны: {a} и {b}"
+        area = a * b
+        perimeter = 2 * (a + b)
+        print(f"\n{'='*40}")
+        print(f"📐 ФИГУРА: {figure_type}")
+        print(f"{'='*40}")
+        print(f"📏 Сторона A: {a}")
+        print(f"📏 Сторона B: {b}")
+        print(f"📐 Характеристика: {description}")
+        print(f"📊 Площадь: {area}")
+        print(f"📏 Периметр: {perimeter}")
+        if figure_type == "КВАДРАТ":
+            print(f"💡 Диагональ: {a * (2**0.5):.2f}")
+    except ValueError:
+        print("❌ Ошибка: пожалуйста, введите числовые значения!")
+def interactive_figure_detector():
+    print("=== Определитель фигур и площадей ===")
+    print("Для выхода введите 'exit'\n")
+    while True:
+        try:
+            user_input = input("Введите две стороны через пробел: ").strip()
+            if user_input.lower() == 'exit':
+                print("До свидания!")
+                break
+            if not user_input:
+                continue
+            sides = user_input.split()
+            if len(sides) != 2:
+                print("❌ Ошибка: нужно ввести ровно два числа!")
+                continue
+            a = float(sides[0])
+            b = float(sides[1])
+            if a <= 0 or b <= 0:
+                print("❌ Ошибка: стороны должны быть положительными!")
+                continue
+            if a == b:
+                figure = "КВАДРАТ"
+                emoji = "⬜"
+            else:
+                figure = "ПРЯМОУГОЛЬНИК"
+                emoji = "🟦"
+            area = a * b
+            perimeter = 2 * (a + b)
+            print(f"{emoji} Фигура: {figure}")
+            print(f"   Стороны: {a} × {b}")
+            print(f"   Площадь: {area}")
+            print(f"   Периметр: {perimeter}")
+            print()
+        except ValueError:
+            print("❌ Ошибка: пожалуйста, введите числовые значения!")
+        except KeyboardInterrupt:
+            print("\n\nПрограмма завершена.")
+            break
+def simple_figure_check():
+    try:
+        a = float(input("Введите первую сторону: "))
+        b = float(input("Введите вторую сторону: "))        
+        if a <= 0 or b <= 0:
+            print("Стороны должны быть положительными!")
+            return
+        if a == b:
+            print(f"Квадрат со стороной {a}, площадь = {a*b}")
+        else:
+            print(f"Прямоугольник {a}×{b}, площадь = {a*b}")
+    except ValueError:
+        print("Ошибка ввода!")
+if __name__ == "__main__":
+    calculate_figure()
+    detailed_figure_calculation()
+    interactive_figure_detector()
+    simple_figure_check()
+#3
+def check_mood(response):   
+    positive = ['хорошо', 'нормально', 'отлично']   
+    negative = ['плохо', 'не хорошо']   
+    response = response.lower()  
+    if response in positive:  
+        return '😊'  
+    elif response in negative:  
+        return '🙁'  
+    else:  
+        return '😐' 
+#Вариант 5
+#Задание №1
+num1 = float(input("Введите первое число: "))
+num2 = float(input("Введите второе число: "))
+if num1 > num2:
+    result = num1 ** num2
+    print(f"Первое число ({num1}) больше. Результат возведения в степень: {result}")
+elif num2 > num1:
+     result = num2 ** num1
+     print(f"Второе число ({num2}) больше. Результат возведения в степень: {result}")
+else:
+    result = num1 + num2
+    print(f"Числа равны ({num1} и {num2}). Их сумма: {result}")
+    print("Ошибка ввода. Пожалуйста, введите корректные числа.")
+#Задание №2
+new_message = "Hello! How are you?"
+response = input("Введите ваш ответ на сообщение 'Hello! How are you?': ")
+if new_message and response:
+    if new_message[0] == response[0]:
+        print(True)
+    else:
+        print(False)
+else:
+    print("Одна из строк пуста, сравнение невозможно.")
+#Задание №3
+length1 = float(input("Введите длину первого отрезка: "))
+length2 = float(input("Введите длину второго отрезка: "))
+if length1 > length2:
+    difference = length1 - length2
+    print(f"Первый отрезок длиннее второго на {difference} единиц.")
+elif length2 > length1:
+    difference = length2 - length1
+    print(f"Второй отрезок длиннее первого на {difference} единиц.")
+elif length1 == length2:
+    print("Отрезки равны по длине.")
+else:
+    print("Ошибка ввода. Пожалуйста, введите корректные числа.")
+#Вариант 6
+#Задание №1
+str = input("Введите произвольную строку: ")
+if len(str) > 0:
+    first_char = str[0]
+    last_char = str[-1]
+    if first_char == last_char:
+        print(True)
+    else:
+        print(False)
+else:
+    print(False)
+#Задание №2
+number = int(input("Введите целое число: "))
+if number % 2 == 0:
+    result = number ** 2
+    print(f"Число кратно 2. Результат (число в степени 2): {result}")
+elif number % 3 == 0:
+    result = number ** 3
+    print(f"Число кратно 3. Результат (число в степени 3): {result}")
+else:
+    result = number * 100
+    print(f"Число не кратно ни 2, ни 3. Результат (число * 100): {result}")
+#Задание №3
+num1 = float(input("Введите первое число: "))
+num2 = float(input("Введите второе число: "))
+if num1 < 0 and num2 < 0:
+    print(False)
+elif num1 >= 0 and num2 >= 0:
+    print(True)
+elif num1 < 0:
+    num1 += 1000  
+    print(f"Первое число (отрицательное) скорректировано: {num1}")
+    print(f"Второе число (положительное): {num2}")
+elif num2 < 0:
+        num2 += 1000  
+        print(f"Первое число (положительное): {num1}")
+        print(f"Второе число (отрицательное) скорректировано: {num2}")
+#Вариант 7
+#Задание №1
+str = input("Введите произвольную строку: ")
+target_chars = ['я', 'и', 'е', 'ю']
+if len(str) > 0:
+    last_char = str[-1]
+    if last_char in target_chars:
+        print(True)
+    else:
+        print(False)
+else:
+    print(False)
+#Задание №2
+a = float(input("Введите длину первой стороны (a): "))
+b = float(input("Введите длину второй стороны (b): "))
+c = float(input("Введите длину третьей стороны (c): "))
+positive_sides = (a > 0) and (b > 0) and (c > 0)
+triangle_inequality = (a + b > c) and (a + c > b) and (b + c > a)
+if positive_sides and triangle_inequality:
+    print(True)
+else:
+    print(False)
+#Задание №4
+number = int(input("Введите целое число: "))
+last_digit = number % 10
+if last_digit == 0:
+    result = number ** 10
+    print(f"Последняя цифра 0. Результат (число^10): {result}")
+elif last_digit == 1:
+    result = number % 3
+    print(f"Последняя цифра 1. Результат (число % 3): {result}")
+elif last_digit == 2:
+    result = number // 2
+    print(f"Последняя цифра 2. Результат (число // 2): {result}")
+elif last_digit >= 3:
+    result = number ** 2
+    print(f"Последняя цифра >= 3. Результат (число^2): {result}")
+#Вариант 8
+#Задание №1
+password = input("Введите пароль: ")
+if len(password) < 8 or password == "qwerty123":
+    print(False)
+else:
+    print(True)
+#Задание №2
+pc_number = 777
+user_num1 = float(input("Введите первое число: "))
+user_num2 = float(input("Введите второе число: "))
+condition1 = (user_num1 < pc_number and user_num2 > pc_number)
+condition2 = (user_num2 < pc_number and user_num1 > pc_number)
+if condition1 or condition2:
+    print(True)
+else:
+    print(False)
+#Задание №3
+lamp_1 = 0
+lamp_2 = 0
+user_choice = input("Какую лампочку зажечь? (Введите '1' или '2'): ")
+if user_choice == "1":
+    lamp_1 = 1
+    print(f"Лампочка 1 зажжена. Статус: lamp_1 = {lamp_1}, lamp_2 = {lamp_2}")
+elif user_choice == "2":
+    lamp_2 = 1
+    print(f"Лампочка 2 зажжена. Статус: lamp_1 = {lamp_1}, lamp_2 = {lamp_2}")
+else:
+    print("Обе лампочки не горят.")
+    print(f"Статус: lamp_1 = {lamp_1}, lamp_2 = {lamp_2}")
+
+#Вариант №9 
+#Задание №1
+switch_1 = False
+switch_2 = False
+print("Включить?")
+text = input("Введите да или нет")
+if text == "да":
+    switch_1 = True
+    switch_2 = True
+    print("Всё включено")
+else:
+    print(switch_1, switch_2)
+
+#Задание №2
+number = int(input("Введите целое число: "))
+if number % 2 == 0 and number >=0:
+    print("True, «even»")
+elif number % 2 == 1 and number >=0:
+    print("True,«odd»")
+else:
+    print(False)
+
+#Задание №3
+str = input("Введите строку")
+if str.startswith('/'):  
+    print("«command»")
+else:
+    print("«It’s string»")
+
+#Вариант №10
+#Задание №1
+def check_string_length(s):  
+    if len(s) == 0:  
+        print(None)  
+    elif len(s) <= 5:  
+        print("short")   
+    elif 6 <= len(s) <= 10:  
+        print("normal") 
+    else:  
+        print("long") 
+
+#Задание №2
+number = int(input("Введите число"))
+if number < 0: 
+    number = 1_000_000
+    print(number)
+elif number == 0:
+    number = 2 ** 2
+    print(number)
+else:
+    number = 2 ** 3
+    print(number)
+
+#Задание №3
+number_1 = 10
+number_2 = 100
+number_3 = int(input("Введите число"))
+if number_3 > number_1 and number_3 < number_2:
+    print(True)
+else:
+    print(False)
+
+#Вариант №11
+#Задание №1
+prog_num = 0
+number_1 = int(input("Введите число"))
+number_2 = int(input("Введите число"))
+if number_1 < 0 and number_2 < 0:
+    prog_num = number_1 + number_2
+    print(prog_num)
+elif number_1 > 0 and number_2 > 0:
+    prog_num = number_1 - number_2
+    print(prog_num)
+elif number_1 < 0 and number_2 > 0:
+    print(False)
+elif number_1 > 0 and number_2 < 0:
+    print(False)
+#Задание №2 
+number_1 = int(input("Введите число"))
+if number_1 % 2 == 1:
+    number_1 += 1
+    print(number_1)
+else:
+    print(True)
+
+#Задание №3
+str = input("Введите строку: ")  
+if len(str) > 10:  
+    print(str[:5])  
+else:   
+    print(str)
+
+#Вариант 12
+#Задание №2
+pc_num = 10  
+user_num = int(input("Введите число: "))  
+if user_num == pc_num or user_num == pc_num + 1 or user_num == pc_num - 1:  
+    print(True)  
+else:  
+    print(False)  
+#Задание №3
+g = (221 - 13) * 2  
+a = int(input("Введите ваш ответ: "))  
+if a == g:  
+    print(True)  
+elif a > g:  
+    print(">")  
+else:  
+    print("<") 
