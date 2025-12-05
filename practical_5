@@ -18,11 +18,8 @@ print(numbers)
 
 #Задание №4
 mass = [14, -6, 3, 11, 6, 8.5, 99, -20, -6, 10, 40, 0.25, -4, 5]
-mass.pop(1)
-mass.pop(-2)
-mass.pop(-6)
-mass.pop(-5)
+mass.pop(1),mass.pop(-2),mass.pop(-6),mass.pop(-5)
 mass.sort()
 print(mass)
-sorted_list = sorted(mass, reverse = True)
-print(sorted_list)
+sorted_mass = sorted(mass, reverse = True)
+print(sorted_mass)
