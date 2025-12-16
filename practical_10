@@ -1,0 +1,35 @@
+#Задание №1
+def upper(t):
+    for i in t:
+        if i.isupper():
+            print(i,'', end='')
+
+upper('PriVet')
+
+#Задание №2
+def punct(text):
+    y = 0
+    for i in text:
+        if i == '!' or i == '?' or i == '.' or i == ',' or i == '(' or i == ')':
+            y += 1
+    print(f"\n{y}")
+
+punct('(Как дела?)')
+#Задание №3
+def create_cube(x, y):
+    if x > 0 and y > 0:
+        for i in range(y):
+            print('*' * x)
+    else:
+        print("Введите значения заново")
+
+create_cube(5, 3)
+
+#Задание №4
+def double(x):
+    y = ''
+    for i in x:
+        y += i * 2
+    print(y)
+
+double('строка')
