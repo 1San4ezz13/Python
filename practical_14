@@ -1,4 +1,4 @@
-#Зададние 1
+#Зададние №1
 while True:
     try:
         a = input('Ввод: ')
@@ -19,7 +19,7 @@ for i, v in enumerate(any_list):
     except ZeroDivisionError:
         print(f"Деление на 0! Элемент: {any_list[0]}")
 
-#Зададние 3
+#Зададние №3
 massiv = []
 while len(massiv) < 5:
     try:
